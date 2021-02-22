@@ -1,0 +1,60 @@
+class GameFixture
+{
+ 
+  fixtureDescription;
+}
+
+class Room
+{ 
+* -> * GameFixture fixtures;
+  
+  public String getRoomDescription(){
+    String descri="I'm in a room. I see:\n";
+     
+    for(GameFixture fixture : fixtures){
+      descri +=fixture.getFixtureDescription() + "\n";
+    
+    }
+     return descri;
+  }
+  
+  
+public void playScenario(){
+  GameFixture fixture = new GameFixture("A large and heavy treasure chest.");
+  addFixture(fixture);
+  
+  System.out.println(getRoomDescription());
+
+}
+  public static void main(String... args) { 
+  new Room().playScenario();
+}
+  
+}
+class TreasureChest
+{
+  Boolean open = false;
+  isA GameFixture;
+}
+
+//$?[End_of_model]$?
+
+namespace -;
+
+
+class GameFixture
+{
+  position 258 181 193 76;
+  position.association GameFixture__Room 43,0 63,41;
+}
+
+class Room
+{
+  position 0 40 237 110;
+  position.association GameFixture:fixtures__Room 111,93 2,0;
+}
+
+class TreasureChest
+{
+  position 61 330 120 76;
+}

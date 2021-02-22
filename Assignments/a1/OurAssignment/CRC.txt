@@ -1,0 +1,141 @@
+[
+  {
+    "name": "Game",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "setup and initializes",
+      "random select murder cards (i.e. solution)",
+      "hand out remaining cards evenly",
+      "know the status of the game "
+    ],
+    "collaborators": [
+      "Board, Player",
+      "",
+      "Player,Card",
+      "Card",
+      "Board"
+    ]
+  },
+  {
+    "name": "Board",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Aggregate the location of Cells",
+      "Move Players",
+      "draw the game map of the board",
+      "check accusation",
+      "check suggestion"
+    ],
+    "collaborators": [
+      "Cell",
+      "Cell,Player",
+      "Cell, GUI",
+      "Card",
+      "Card,Player"
+    ]
+  },
+  {
+    "name": "Player",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "knows position",
+      "knows the nick name of each player",
+      "knows the name of Character ",
+      "accuse",
+      "suggest",
+      "know cards that is in hand"
+    ],
+    "collaborators": [
+      "Location",
+      "String",
+      "String",
+      "Game, Player,Card",
+      "Room, Game, Card",
+      "Card"
+    ]
+  },
+  {
+    "name": "Card",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Know name",
+      "Know type",
+      "know the owener "
+    ],
+    "collaborators": [
+      "String",
+      "Player,Weapon,Room",
+      "Player"
+    ]
+  },
+  {
+    "name": "Cell",
+    "superclasses": "RoomEntranceCell",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Knows positions ",
+      "Knows type"
+    ],
+    "collaborators": [
+      "Coordinate",
+      "Player,Room,Weapon,RoomEntranceCell"
+    ]
+  },
+  {
+    "name": "RoomEntranceCell",
+    "superclasses": "Cell",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Knows RoomEntranceCell Position",
+      "Know WalkwayEntranceCell Position"
+    ],
+    "collaborators": [
+      "Coordinate, Cell",
+      "Coordinate, Cell"
+    ]
+  },
+  {
+    "name": "Weapon",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "knows positions ",
+      "knows the name of Weapon",
+      "",
+      ""
+    ],
+    "collaborators": [
+      "Location",
+      "String"
+    ]
+  },
+  {
+    "name": "Room",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Knows name",
+      "Knows Player inside room",
+      "Knows Weapon inside room",
+      "know number of cells that is part of Room "
+    ],
+    "collaborators": [
+      "String",
+      "Player",
+      "Weapon",
+      "Cell"
+    ]
+  }
+]
